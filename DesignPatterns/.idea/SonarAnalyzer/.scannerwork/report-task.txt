@@ -1,0 +1,6 @@
+projectKey=SonarAnalyzer:DesignPatterns
+serverUrl=http://localhost:1000
+serverVersion=10.0.0.68432
+dashboardUrl=http://localhost:1000/dashboard?id=SonarAnalyzer%3ADesignPatterns
+ceTaskId=AYgWQ8Nq08afNuTf8aa_
+ceTaskUrl=http://localhost:1000/api/ce/task?id=AYgWQ8Nq08afNuTf8aa_
