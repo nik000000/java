@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="SonarLintProjectSettings">
-    <option name="fileExclusions">
-      <list>
-        <option value="DIRECTORY:." />
-        <option value="DIRECTORY:src" />
-        <option value="FILE:src/api/methods/API.java" />
-      </list>
-    </option>
+    <option name="bindingEnabled" value="true" />
+    <option name="bindingSuggestionsEnabled" value="false" />
+    <option name="projectKey" value="DesignPatterns" />
+    <option name="serverId" value="sonarqube" />
   </component>
 </project>

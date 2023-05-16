@@ -358,5 +358,53 @@ public class API {
         line = strings.stream().reduce((str1, str2)-> str1 + " "+str2);
         System.out.println(line.get());
 
+
+        // Example 3: Finding the longest word in a list:
+        List<String> words = Arrays.asList("Java", "is", "fun", "and", "powerful");
+        Optional<String> longest = words.stream().reduce((a, b)-> a.length()>b.length() ? a:b);
+        System.out.println(longest.get());
+    }
+
+    /**
+     * flatmap():method is used to flatten a stream of collections or arrays into a single stream.
+     * It transforms each element of the stream into a stream of values, and then combines these streams into one.
+     * The flatMap() method takes a function as an argument, which maps each element to a stream.
+     * The resulting streams are then flattened into a single stream of values.
+     */
+    public void flatMap(){
+        List<List<String>> list = Arrays.asList(
+                Arrays.asList("Mariam", "Alex", "Ismail"),
+                Arrays.asList("John", "Alesha", "Andre"),
+                Arrays.asList("Susy", "Ali")
+        );
+        List<String> flatList = list.stream().flatMap(List::stream).collect(Collectors.toList());
+        flatList.stream().forEach(System.out::println);
+    }
+
+    public void concatStringByComma(){
+        List<String> names = List.of("anna", "john", "marcos", "helena", "yasmin");
+        Optional<String> concatNames = names.stream().reduce((str1, str2)-> str1+","+str2);
+        concatNames.ifPresent(item->System.out.println(item));
+
+        String join = names.stream().collect(Collectors.joining(","));
+        System.out.println(join);
+    }
+
+    /**
+     * Internal working of the Collectors, this can be a list or set or Map.
+     */
+    public void collectors(){
+        List<String> emails = Arrays.asList("java", "hello", "downtime", "London");
+        emails.stream().collect(
+                () -> new ArrayList<String>(),
+                (list, element)-> list.add(element),
+                (list1, list2)->  list1.addAll(list2)
+        ).forEach(System.out::println);
+
+        emails.stream().collect(
+                ArrayList::new,
+                ArrayList::add,
+                ArrayList::addAll
+        ).forEach(System.out::println);
     }
 }
