@@ -3,7 +3,8 @@
 - Stream APIs are most used with collections.
 Imperative Programming:
 - Before java 8 we used to write loops and other things.
-
+- Streams take care of multithreading for us. you can spin up parallel threads and at the time you collect streams can
+be combined to faster results.
 # Stream:
 - A stream can be thought of as a sequence of elements that can be processed in parallel or sequentially.
 - It allows for concise and expressive code for manipulating, filtering, transforming, and aggregating data.
